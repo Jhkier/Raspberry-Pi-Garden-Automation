@@ -15,27 +15,22 @@ water_level_sensor = digitalio.DigitalInOut(D18)
 water_level_sensor.switch_to_input(pull=digitalio.Pull.UP)
 water_level_sensor.pull = digitalio.Pull.UP
 
-
-
-
 def water_level_function():
-
+    current_water_level = None
     while True:
-        x = "Wet"
-        while water_level_sensor.value == False:
-            water_level_led.value = False
-            if x == "Wet":
-                print("They System has Water")
-            x = "Dry"
+        water_high = water_level_sensor.value
+        if water_high != current_water_level:
+            water_changed(water_high)
+        current_water_level = water_high
+        time.sleep(60)
 
-        while water_level_sensor.value == True:
-            water_level_led.value = True
-            if x == "Dry":
-                print("The System is Dry and needs Water")
-            x = ""
-
-
+def water_changed(water_high: bool):
+        water_level_led.value = water_high
+        if water_high == True:
+            print("They System has Water")
+        else:
+            print("The System is Dry and needs Water")
 
 
-#print(water_level_sensor.value)
+
 water_level_function()
