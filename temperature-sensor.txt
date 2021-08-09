@@ -7,4 +7,4 @@ cd /sys/bus/w1/devices
 ls 
 
 will give you list of what the single wire digital probe is noted as...
-
+if you're using i2c 0 you'll also need to turn it on in the config.txt file adding this: dtparam=i2c_vc=on
