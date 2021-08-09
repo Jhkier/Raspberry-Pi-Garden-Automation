@@ -1,0 +1,10 @@
+
+sudo modprobe w1-gpio
+sudo modprobe w1-therm
+sudo dtoverlay w1-gpio gpiopin=4 pullup=0    #to set for pin 4
+cd /sys/bus/w1/devices
+##then 
+ls 
+
+will give you list of what the single wire digital probe is noted as...
+
