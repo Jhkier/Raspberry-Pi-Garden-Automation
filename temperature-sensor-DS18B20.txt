@@ -8,3 +8,8 @@ ls
 
 will give you list of what the single wire digital probe is noted as...
 if you're using i2c 0 you'll also need to turn it on in the config.txt file adding this: dtparam=i2c_vc=on
+
+Once done, you read the temperature in the file from:
+
+pi@raspberrypi://sys/bus/w1/devices/28-3cffe076cfcf $ cat w1_slave    #28* will be the device id... that is also a file.
+
