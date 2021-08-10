@@ -1,0 +1,17 @@
+ sudo i2cdetect -l    #this will tell you which channels on the pi are active (sca_0 or sca_1)
+ sudo i2cdetect 0       # will read which adc devices are acctive on channel 0
+ 
+
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: -- -- -- -- -- -- -- -- 48 49 -- -- -- -- -- --       #this will show that there is an ADC device PCF8591T is attached
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --                         
+
+
+sudo i2cset -y 1 0x48 0x01           #This should set it to pin 1 on the device to read it. then...
+sudo i2cget -y 1 0x48                 #this then reads channel 1 data (apparently you must read it twice)
