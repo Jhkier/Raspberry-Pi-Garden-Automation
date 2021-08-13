@@ -13,5 +13,5 @@
 70: -- -- -- -- -- -- -- --                         
 
 
-sudo i2cset -y 1 0x48 0x01           #This should set it to pin 1 on the device to read it. then...
-sudo i2cget -y 1 0x48                 #this then reads channel 1 data (apparently you must read it twice)
+sudo i2cset -y 0 0x48 0x01           #This should set it to pin 1 on the device to read it. then...
+sudo i2cget -y 0 0x48                 #this then reads channel 1 data (apparently you must read it twice)
