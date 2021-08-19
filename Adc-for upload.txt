@@ -1,0 +1,20 @@
+This example will explain the wiring
+
+https://www.instructables.com/PCF8591-i2c-Analog-IO-Expander-Fast-Easy-Usage/
+
+Make sure that you use pins for all power/ground and not just those to power the device or the pin used. 
+
+STEP:
+sudo i2cdetect -l    #list all i2c
+sudo i2cdetect 0     #list channels/devices on i2c input 0
+sudo i2cget -y 0 0x48  #shows all pins active on input 0 and device 0x48
+sudo i2cset -y 0 0x48 0x02 # this will change it to be focused on pin 2 rather than pin 0 by default
+
+Explaination on i2c:
+https://www.waveshare.com/wiki/Raspberry_Pi_Tutorial_Series:_I2C
+https://onion.io/2bt-digging-into-i2cget-and-i2cset/
+
+
+Additional resources:
+https://rayshobby.net/wordpress/announcing-opensprinkler-pi-v1-2/
+http://blog.chrysocome.net/2012/12/i2c-analog-to-digital-converter.html
