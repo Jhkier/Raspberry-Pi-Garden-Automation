@@ -1,1 +1,6 @@
 the epaper files are a complete library
+
+
+
+Best to follow this resource for setup:
+https://www.waveshare.com/wiki/Template:Raspberry_Pi_Guides_for_SPI_e-Paper
